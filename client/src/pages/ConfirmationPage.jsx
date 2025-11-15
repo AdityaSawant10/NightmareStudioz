@@ -124,10 +124,6 @@ function ConfirmationPage() {
               </span>
             </div>
           </div>
-
-          <div className="ticket-footer">
-            <p>Please show this booking ID at the counter</p>
-          </div>
         </div>
 
         <div className="action-buttons">
