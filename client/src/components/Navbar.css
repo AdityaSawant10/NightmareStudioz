@@ -41,49 +41,56 @@
 
 .theme-toggle {
   position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 12px;
+  transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+  background-color: var(--bg-secondary);
 }
 
 .theme-toggle input {
   opacity: 0;
   width: 0;
   height: 0;
-}
-
-.slider {
   position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--border-color);
-  transition: 0.3s;
-  border-radius: 24px;
 }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 18px;
-  width: 18px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
-  transition: 0.3s;
-  border-radius: 50%;
+.theme-icon {
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.theme-toggle input:checked + .slider {
-  background-color: var(--accent);
+.sun-icon {
+  opacity: 0.5;
 }
 
-.theme-toggle input:checked + .slider:before {
-  transform: translateX(26px);
+.moon-icon {
+  opacity: 0.5;
 }
 
-.theme-toggle:hover .slider {
-  opacity: 0.9;
+.theme-toggle input:checked ~ .sun-icon {
+  opacity: 0.3;
+}
+
+.theme-toggle input:checked ~ .moon-icon {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.theme-toggle input:not(:checked) ~ .sun-icon {
+  opacity: 1;
+  color: #f59e0b;
+}
+
+.theme-toggle input:not(:checked) ~ .moon-icon {
+  opacity: 0.3;
 }

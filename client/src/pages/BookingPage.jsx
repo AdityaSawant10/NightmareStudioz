@@ -251,6 +251,12 @@ function BookingPage() {
               </div>
             )}
 
+            {movie && (!selectedTime || seats.length === 0) && (
+              <div className="movie-poster-section">
+                <img src={movie.image} alt={movie.title} className="booking-movie-poster" />
+              </div>
+            )}
+
             {selectedTime && seats.length > 0 && (
               <>
                 <div className="screen">
